@@ -1,6 +1,6 @@
 <img src="Media/logo_darkmode.png" />
 
-Volumetric light beams for VRChat. As seen in **Stage Flight** and **Furality**.
+Volumetric light beams for VRChat. As seen in **Stage Flight** and **Furality**, and now **Kitty Club**.
 
 _Still in active development, function signatures may change and stuff >>_
 
@@ -31,9 +31,9 @@ Either clone the whole project, or copy-paste Assets/LUTBeam/ into your project.
 - VRSL: Don't know but should be easy to integrate.
 
 ## Attribution
-All the code in **Assets/LUTBeam/** is MIT / Public Domain, no attribution or liscence required
+All the code in **Assets/LUTBeam/** is MIT / Public Domain, no attribution or licence required
 
-Therinization image is by Nightshades
+Therianization image is by Nightshades
 
 Tiles texture is from textures.com
 
