@@ -6,7 +6,7 @@
 #define start_size 8
 // angular resolution, IE how many angles can the beam be viewed from.
 #define end_size 128
-
+#include "Packages\gay.kittycrew.kittydmx\Assets\Runtime\Internal\Shader\KDMXHelpers.cginc"
 struct dummy_struct {};
 
 #define CUSTOM_STRUCT_EXISTS
@@ -43,6 +43,7 @@ struct BeamSettings
     float framing3A;
     float framing3B;
     float framingAngle;
+    float dmxChannel;
 };
 
 struct BeamData
@@ -187,10 +188,9 @@ BeamSettings DefaultBeamSettings()
 BeamData LUTBeamVert(float4 vertexPos, BeamSettings settings)
 {
     BeamData beam = (BeamData)0;
-    
     beam.zoomX = tan(radians(max(settings.zoomX/2, 1)));
     beam.zoomY = tan(radians(max(settings.zoomY/2, 1)));
-    
+
 #if LUTBEAM_FOCUS
     beam.focus = settings.focus;
     beam.frost = settings.frost;
@@ -265,7 +265,6 @@ BeamData LUTBeamVert(float4 vertexPos, BeamSettings settings)
     float3 right    = float3(1, 0, 0);
     float3 up       = float3(0, 1, 0);
     float3 forward  = float3(0, 0, -1);
-    
     float3 corrected_pos = 0;
     float3 frustumOffsetVector = float3(0, 0, frustumOffset);
 
@@ -454,7 +453,6 @@ BeamData LUTBeamVert(float4 vertexPos, BeamSettings settings)
 #endif
 
     beam.invBeamLength = 1 / abs(frustumNearZ - frustumFarZ);
-
     return beam;
 }
 
